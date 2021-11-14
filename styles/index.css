@@ -65,7 +65,7 @@ header  > h1, header > p {
     width: 30%;
     margin: 10px auto;
     padding: 3px;
-    /* display: none; */
+    display: none;
 }
 
 .gamer-area p{
