@@ -5,13 +5,18 @@ header {
     background-color: rgb(182, 95, 204);
 }
 button {
-    background-color: rgb(182, 95, 204);
+    background-color: rgb(184, 145, 196);;
     color:white;
     padding: 10px;
     border-radius: 4px;
     box-shadow: 2px 2px 1px rgb(92, 83, 83);
     font-weight: bolder;
+    cursor: pointer;
 }
+button:hover{
+    background-color: rgb(182, 95, 204)
+}
+
 header  > h1, header > p {
     text-align: center;
 }
@@ -83,8 +88,8 @@ header  > h1, header > p {
     margin: 1rem 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 3rem);
-    grid-template-rows: repeat(3, 3rem);
+    grid-template-columns: repeat(3, 4rem);
+    grid-template-rows: repeat(3, 4rem);
     justify-content: center;
     gap: 0.5rem
 }
@@ -93,10 +98,18 @@ header  > h1, header > p {
     cursor: pointer;
     display: flex;
     justify-content: center;
-    text-align: center;
-    background-color: rgb(182, 95, 204);
+    align-items: center;
+    background-color: rgb(184, 145, 196);
     border-radius: 6px;
     box-shadow: 2px 2px 1px rgb(92, 83, 83);
+    color: white;
+}
+.gamer-area > ul >li:hover{
+    background-color: rgb(182, 95, 204);
+}
+.disabled li{
+    background-color: rgb(184, 145, 196);
+    cursor:copy;
 }
 
 #user-info-input-area > form > div{
