@@ -1,0 +1,121 @@
+body{
+    font-family: sans-serif;
+}
+header {
+    background-color: rgb(182, 95, 204);
+}
+button {
+    background-color: rgb(182, 95, 204);
+    color:white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1px rgb(92, 83, 83);
+    font-weight: bolder;
+}
+header  > h1, header > p {
+    text-align: center;
+}
+#user-info-input-area > form > div{
+        margin: 10px;
+}
+#user-info-input-area {
+    position: fixed;
+    top: 20%;
+    left: 5%;
+}
+.player-info {
+    width: 40%;
+    margin: 0 auto;
+}
+.player-info>ul{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.player-info > ul >li{
+    list-style: none;
+    background-color: rgb(182, 95, 204);
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 3px 2px 2px rgb(0, 0, 0);
+}
+
+.player-info > div > a{
+    display: block;
+    margin: 10px 0;
+}
+
+#start-game {
+    text-align: center;
+    margin: 20px;
+}
+
+#result {
+    text-align: center;
+    background-color: rgb(151, 141, 141, 0.7);
+    box-shadow: 2px 2px 4px rgb(139, 125, 125);
+    color: white;
+    width: 30%;
+    margin: 10px auto;
+    padding: 3px;
+    /* display: none; */
+}
+
+.gamer-area p{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rosybrown;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px rgb(139, 125, 125);
+}
+.gamer-area > ul{
+    list-style: none;
+    width: 40%;
+    margin: 10px auto;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.gamer-area > ul >li{
+    width: 20%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(182, 95, 204);
+    border-radius: 6px;
+    box-shadow: 2px 2px 1px rgb(92, 83, 83);
+}
+
+#user-info-input-area > form > div{
+    margin: 10px;
+}
+#user-info-input-area {
+    position: fixed;
+    top: 20%;
+    left: 15%;
+    width: 90%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 48rem) {
+
+    #user-info-input-area {
+        left: calc(50% - 20rem);
+        width: 40rem;
+    }
+}
