@@ -13,8 +13,10 @@ const startGame = document.getElementById("start-game");
 const playArea = document.querySelectorAll(".gamer-area > ul > li")
 
 let nameToUpdate = userName;
-let updatePlayerOne = ''
+let updatePlayerOne = '';
 let activePalyer = '';
+let count = 0;
+
 
 
 startGame.addEventListener('click', (e) => {
@@ -66,22 +68,28 @@ playArea.forEach((e) => {
             playerTurn.textContent = playerTwoName.textContent;
             activePalyer = 2;
             winner =  findwinner();
+            count = count + 1;
         } else if (!e.target.textContent) {
             playArea[e.target.id - 1].textContent = 'O';
             playerTurn.textContent = playerOneName.textContent;
             activePalyer = 1;
             winner = findwinner();
+            count = count + 1;
         }
         console.log(winner);
         if(winner) {
             if(winner === 'X'){
                 document.getElementById('result').style.display = 'block';
-                document.getElementById('winner-name').textContent = playerOneName.textContent
-            }else{
+                document.querySelector('#result h3').textContent =`YoU wOn!!!${playerOneName.textContent}`
+            } else if(winner === 'O'){
                 document.getElementById('result').style.display = 'block';
-                document.getElementById('winner-name').textContent = playerTwoName.textContent
-            }
+                document.querySelector('#result h3').textContent =`YoU wOn!!!${playerTwoName.textContent}`
+            } 
+        } else if(count === 9) {
+            document.getElementById('result').style.display = 'block';                
+            document.querySelector('#result h3').textContent ='Draw!!!'
         }
+        
     })
 });
 
