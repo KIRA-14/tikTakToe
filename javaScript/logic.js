@@ -30,7 +30,8 @@ editTwo.addEventListener('click',(e)=>{
     editModul(e);
 });
 
-confirmbut.addEventListener('click', ()=>{
+confirmbut.addEventListener('click', (e)=>{
+    e.preventDefault();
     if(updatePlayerOne===1){
         playerOneName.textContent=nameToUpdate;
     } else {
