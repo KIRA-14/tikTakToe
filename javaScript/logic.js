@@ -60,16 +60,27 @@ userName.addEventListener('input', (e) => {
 playArea.forEach((e) => {
     e.addEventListener('click', (e) => {
         e.preventDefault()
+        let winner = 0;
         if (activePalyer === 1 && !e.target.textContent) {
             playArea[e.target.id - 1].textContent = 'X';
             playerTurn.textContent = playerTwoName.textContent;
             activePalyer = 2;
-            findwinner()
+            winner =  findwinner();
         } else if (!e.target.textContent) {
             playArea[e.target.id - 1].textContent = 'O';
             playerTurn.textContent = playerOneName.textContent;
             activePalyer = 1;
-            findwinner()
+            winner = findwinner();
+        }
+        console.log(winner);
+        if(winner) {
+            if(winner === 'X'){
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('winner-name').textContent = playerOneName.textContent
+            }else{
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('winner-name').textContent = playerTwoName.textContent
+            }
         }
     })
 });
@@ -87,29 +98,59 @@ const editModul = (e) => {
 
 const findwinner = () => {
     let levelTwo = false;
-    let levelOne = playArea[0].textContent === playArea[1].textContent;
+    let levelOne = playArea[0].textContent  && playArea[1].textContent ? 
+        (playArea[0].textContent === playArea[1].textContent) : false;
         if (levelOne) {
-            levelTwo = playArea[1].textContent === playArea[2].textContent;
+            levelTwo = playArea[1].textContent  && playArea[2].textContent ? 
+            playArea[1].textContent === playArea[2].textContent : false;
+            if(levelTwo){
+                return playArea[1].textContent;
+            }
         }
-        levelOne = playArea[0].textContent === playArea[3].textContent;
+        levelOne = playArea[0].textContent  && playArea[3].textContent ? 
+        playArea[0].textContent === playArea[3].textContent : false;
         if (levelOne) {
-            levelTwo = playArea[3].textContent === playArea[6].textContent;
+            levelTwo = playArea[3].textContent && playArea[6].textContent ?
+            playArea[3].textContent === playArea[6].textContent : false;
+            if(levelTwo){
+                return playArea[3].textContent;
+            }
         }
-        levelOne = playArea[0].textContent === playArea[4].textContent;
+        levelOne = playArea[0].textContent && playArea[4].textContent ?
+        playArea[0].textContent === playArea[4].textContent : false;
         if (levelOne) {
-            levelTwo = playArea[4].textContent === playArea[8].textContent;
+            levelTwo = playArea[0].textContent && playArea[4].textContent ?
+            playArea[4].textContent === playArea[8].textContent : false;
+            if(levelTwo){
+                return playArea[4].textContent;
+            }
         }
-        levelOne = playArea[1].textContent === playArea[4].textContent;
+        levelOne = playArea[1].textContent && playArea[4].textContent ?
+        playArea[1].textContent === playArea[4].textContent : false;
         if (levelOne) {
-            levelTwo = playArea[4].textContent === playArea[7].textContent;
+            levelTwo = playArea[1].textContent && playArea[4].textContent ?
+            playArea[4].textContent === playArea[7].textContent : false;
+            if(levelTwo){
+                return playArea[4].textContent;
+            }
         }
-        levelOne = playArea[2].textContent === playArea[4].textContent;
+        levelOne = playArea[2].textContent && playArea[4].textContent ?
+        playArea[2].textContent === playArea[4].textContent : false;
         if (levelOne) {
-            levelTwo = playArea[4].textContent === playArea[6].textContent;
+            levelTwo = playArea[4].textContent && playArea[6].textContent ?
+            playArea[4].textContent === playArea[6].textContent : false;
+            if(levelTwo){
+                return playArea[4].textContent;
+            }
         }
-        levelOne = playArea[2].textContent === playArea[5].textContent;
+        levelOne = playArea[2].textContent && playArea[5].textContent ? 
+        playArea[2].textContent === playArea[5].textContent : false;
         if (levelOne) {
-            levelTwo = playArea[5].textContent === playArea[8].textContent;
+            levelTwo = playArea[5].textContent && playArea[8].textContent ?
+            playArea[5].textContent === playArea[8].textContent : false;
+            if(levelTwo){
+                return playArea[4].textContent;
+            }
         }
-        console.log(levelTwo)
+        return false;
 }
