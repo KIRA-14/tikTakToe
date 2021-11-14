@@ -64,26 +64,12 @@ playArea.forEach((e) => {
             playArea[e.target.id - 1].textContent = 'X';
             playerTurn.textContent = playerTwoName.textContent;
             activePalyer = 2;
+            findwinner()
         } else if (!e.target.textContent) {
             playArea[e.target.id - 1].textContent = 'O';
             playerTurn.textContent = playerOneName.textContent;
             activePalyer = 1;
-        }
-        let levelOne = playArea[0] === playArea[1];
-        if (levelOne) {
-            const levelTwo = playArea[1] === playArea[2];
-        }
-        levelOne = playArea[0] === playArea[3];
-        if (levelOne) {
-            const levelTwo = playArea[3] === playArea[6];
-        }
-        levelOne = playArea[0] === playArea[4];
-        if (levelOne) {
-            const levelTwo = playArea[4] === playArea[8];
-        }
-        let levelOne = playArea[1] === playArea[5];
-        if (levelOne) {
-            const levelTwo = playArea[5] === playArea[7];
+            findwinner()
         }
     })
 });
@@ -98,3 +84,32 @@ const editModul = (e) => {
         updatePlayerOne = 2;
     }
 };
+
+const findwinner = () => {
+    let levelTwo = false;
+    let levelOne = playArea[0].textContent === playArea[1].textContent;
+        if (levelOne) {
+            levelTwo = playArea[1].textContent === playArea[2].textContent;
+        }
+        levelOne = playArea[0].textContent === playArea[3].textContent;
+        if (levelOne) {
+            levelTwo = playArea[3].textContent === playArea[6].textContent;
+        }
+        levelOne = playArea[0].textContent === playArea[4].textContent;
+        if (levelOne) {
+            levelTwo = playArea[4].textContent === playArea[8].textContent;
+        }
+        levelOne = playArea[1].textContent === playArea[4].textContent;
+        if (levelOne) {
+            levelTwo = playArea[4].textContent === playArea[7].textContent;
+        }
+        levelOne = playArea[2].textContent === playArea[4].textContent;
+        if (levelOne) {
+            levelTwo = playArea[4].textContent === playArea[6].textContent;
+        }
+        levelOne = playArea[2].textContent === playArea[5].textContent;
+        if (levelOne) {
+            levelTwo = playArea[5].textContent === playArea[8].textContent;
+        }
+        console.log(levelTwo)
+}
