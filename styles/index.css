@@ -80,17 +80,19 @@ header  > h1, header > p {
 }
 .gamer-area > ul{
     list-style: none;
-    width: 40%;
-    margin: 10px auto;
-    align-items: center;
+    margin: 1rem 0;
+    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(3, 3rem);
+    grid-template-rows: repeat(3, 3rem);
+    justify-content: center;
+    gap: 0.5rem
 }
 
 .gamer-area > ul >li{
-    width: 20%;
-    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
     text-align: center;
     background-color: rgb(182, 95, 204);
     border-radius: 6px;
