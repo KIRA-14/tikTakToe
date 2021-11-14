@@ -24,9 +24,11 @@ startGame.addEventListener('click',(e)=>{
 });
 
 editOne.addEventListener('click',(e)=>{ 
+    e.preventDefault();
     editModul(e)
 });
 editTwo.addEventListener('click',(e)=>{ 
+    e.preventDefault();
     editModul(e);
 });
 
@@ -42,17 +44,20 @@ confirmbut.addEventListener('click', (e)=>{
     userName.value="";
 })
 
-cancel.addEventListener('click', ()=>{
+cancel.addEventListener('click', (e)=>{
+    e.preventDefault();
     backdrop.style.display= "none"
     modl.style.display= "none"
 })
 
-userName.addEventListener('input',()=>{
+userName.addEventListener('input',(e)=>{
+    e.preventDefault();
     nameToUpdate = userName.value;
 })
 
 
 const editModul=(e)=> {
+    e.preventDefault();
     backdrop.style.display= "block"
     modl.style.display= "block"
     if(e.target.id === "editplaye-one") {
