@@ -76,6 +76,7 @@ header  > h1, header > p {
     padding: 10px;
     border-radius: 6px;
     box-shadow: 1px 1px 1px rgb(139, 125, 125);
+    display: none;
 }
 .gamer-area > ul{
     list-style: none;
